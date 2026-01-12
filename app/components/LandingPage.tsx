@@ -209,8 +209,10 @@ const LandingPage = () => {
           className="mt-6 flex flex-col gap-4 items-center max-w-xl"
         >
           <p className={`text-xl md:text-2xl font-medium leading-relaxed transition-colors duration-700 text-slate-600 dark:text-slate-300`}>
-            Designing interfaces that feel <span className={`font-bold transition-colors duration-700 text-green-600 dark:text-lime-400`}>heroic</span> in a digital world.
+            Engineering interfaces that deliver a <span className={`font-bold transition-colors duration-700 text-green-600 dark:text-lime-400`}>heroic</span> experience
           </p>
+
+
         </motion.div>
 
         {/* CTA Button */}
@@ -235,6 +237,8 @@ const LandingPage = () => {
             </span>
           </Link>
         </motion.div>
+
+
       </div>
 
       {/* --- PERMANENT ORBIT HUB --- */}
