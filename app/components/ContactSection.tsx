@@ -122,7 +122,7 @@ const ContactSection = () => {
                 <div className="absolute -inset-4 bg-gradient-to-tr from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-900 rounded-[2rem] blur-xl opacity-40 group-hover:opacity-60 transition duration-700" />
                 
                 <img
-                  src="/untitled.png" 
+                  src="/ujjwalthakur.png" 
                   alt="Profile"
                   className="relative z-0 w-auto h-auto max-h-[350px] lg:max-h-[450px] object-contain rounded-2xl 
                   
