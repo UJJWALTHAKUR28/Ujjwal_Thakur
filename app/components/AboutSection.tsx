@@ -52,7 +52,7 @@ const PremiumDecoder = ({ text, className }: { text: string; className?: string 
             return prev;
           }
           // Reveal 2 characters per tick for a faster, more fluid flow
-          return prev + 2; 
+          return prev + 2;
         });
       }, 15); // 15ms per tick = very smooth high refresh rate feel
 
@@ -105,7 +105,7 @@ export default function AboutSection() {
   const opacityFade = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
 
   // The content text - Continuous flow
-  const contentText = "We exist at the intersection of logic and emotion. Our design philosophy is built on the belief that software should not just be used, but felt. By stripping away the unnecessary, we reveal the essential, crafting digital ecosystems that are intuitive, powerful, and undeniably human. Every dot, every dash, and every pixel is a deliberate choice made to elevate your brand above the noise.";
+  const contentText = "I am a Software Engineer bridging the gap between creative design and algorithmic logic. Specializing in Next.js, Python, and AI, I build end-to-end digital products that are not only intelligent but visually stunning. I treat every line of code as a design decision, blending robust backend architectures with intuitive UI/UX. My goal is simple: to help forward-thinking companies build the future of the web—fast, functional, and flawless. Beyond just shipping features, I focus on creating scalable systems that deliver real value and long-term performance. I am ready to bring this unique blend of technical precision and creative vision to your next ambitious project.";
 
   return (
     <section
@@ -113,24 +113,24 @@ export default function AboutSection() {
       className="relative w-full min-h-screen flex items-center justify-center py-24 px-6 md:px-12 overflow-hidden bg-white dark:bg-black transition-colors duration-700"
     >
       {/* --- Premium Background Effects --- */}
-      
+
       {/* 1. Subtle Grid */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] dark:opacity-[0.08] pointer-events-none" 
-        style={{ 
-          backgroundImage: 'linear-gradient(to right, #888 1px, transparent 1px), linear-gradient(to bottom, #888 1px, transparent 1px)', 
-          backgroundSize: '6rem 6rem' 
-        }} 
+      <div className="absolute inset-0 z-0 opacity-[0.03] dark:opacity-[0.08] pointer-events-none"
+        style={{
+          backgroundImage: 'linear-gradient(to right, #888 1px, transparent 1px), linear-gradient(to bottom, #888 1px, transparent 1px)',
+          backgroundSize: '6rem 6rem'
+        }}
       />
-      
+
       {/* 2. Ambient Gradient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/10 dark:bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
 
       {/* --- Main Content --- */}
-      <motion.div 
+      <motion.div
         style={{ opacity: opacityFade }}
         className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center"
       >
-        
+
         {/* BIG HEADING */}
         <div className="overflow-hidden mb-16">
           <motion.h2
@@ -150,12 +150,12 @@ export default function AboutSection() {
         </div>
 
         {/* DECORATIVE PARALLAX LINE */}
-        <motion.div 
-            style={{ y: yMove }}
-            className="mt-24 flex flex-col items-center gap-4 opacity-30 dark:opacity-50"
+        <motion.div
+          style={{ y: yMove }}
+          className="mt-24 flex flex-col items-center gap-4 opacity-30 dark:opacity-50"
         >
-            <div className="w-[1px] h-24 bg-gradient-to-b from-transparent via-neutral-400 to-transparent dark:via-neutral-500" />
-            <span className="text-xs font-mono tracking-[0.3em] uppercase">Scroll</span>
+          <div className="w-[1px] h-24 bg-gradient-to-b from-transparent via-neutral-400 to-transparent dark:via-neutral-500" />
+          <span className="text-xs font-mono tracking-[0.3em] uppercase">Scroll</span>
         </motion.div>
 
       </motion.div>

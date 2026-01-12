@@ -10,7 +10,7 @@ import {
   Terminal,
   MapPin,
   Calendar,
-  ArrowUpRight,
+  Briefcase,
 } from "lucide-react";
 import { cn } from "../libs/utils";
 
@@ -114,7 +114,7 @@ const CurtainSection = ({
       {/* Dynamic Background Gradient */}
       <div className={cn("absolute inset-0 z-0 transition-colors duration-700", data.backgroundClass)} />
 
-      {/* Noise Texture (Subtle on light, visible on dark) */}
+      {/* Noise Texture */}
       <div className="absolute inset-0 opacity-5 dark:opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-0 mix-blend-overlay pointer-events-none"></div>
 
       {/* Main Content Container */}
@@ -138,12 +138,19 @@ const CurtainSection = ({
             </div>
           </div>
 
-          {/* Big Title */}
-          <h2 className={cn("text-5xl md:text-7xl font-black leading-tight tracking-tight transition-colors duration-300", data.textClass)}>
+          {/* --- FIXED SECTION START --- */}
+          {/* Updated Size: text-2xl -> md:text-3xl -> lg:text-4xl 
+             This ensures "Software Development Engineer Intern" fits on one line.
+          */}
+          <h2 className={cn(
+            "text-2xl md:text-3xl lg:text-4xl font-black leading-tight tracking-tight transition-colors duration-300 md:whitespace-nowrap",
+            data.textClass
+          )}>
             {data.role}
           </h2>
+          {/* --- FIXED SECTION END --- */}
 
-          <h3 className={cn("text-2xl md:text-3xl font-light opacity-80 flex items-center gap-3", data.textClass)}>
+          <h3 className={cn("text-lg md:text-xl font-light opacity-80 flex items-center gap-3", data.textClass)}>
             {data.company}
             {data.status === "CURRENT" && (
               <span className="text-xs bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/50 px-3 py-1 rounded-full font-bold tracking-wide">
@@ -153,9 +160,9 @@ const CurtainSection = ({
           </h3>
 
           {/* Description */}
-          <div className="space-y-4 mt-4">
+          <div className="space-y-4 mt-2">
             {data.description.map((desc, i) => (
-              <p key={i} className={cn("text-lg md:text-xl leading-relaxed font-light max-w-3xl opacity-80", data.textClass)}>
+              <p key={i} className={cn("text-base md:text-lg leading-relaxed font-light max-w-3xl opacity-80", data.textClass)}>
                 {desc}
               </p>
             ))}
@@ -172,7 +179,7 @@ const CurtainSection = ({
           viewport={{ once: false }}
           className="hidden md:flex flex-col justify-center items-start md:items-end relative"
         >
-          {/* Big Decorative Number or Logo - Faded */}
+          {/* Big Decorative Number or Logo */}
           <div className={cn(
             "absolute -top-20 -right-20 text-[20rem] font-bold select-none pointer-events-none transition-colors duration-500",
             "text-black/5 dark:text-white/5"
@@ -193,15 +200,19 @@ const CurtainSection = ({
             </div>
 
             <div className={cn(
-              "mt-8 pt-6 border-t w-full flex justify-between items-center group cursor-pointer",
+              "mt-8 pt-6 border-t w-full flex justify-between items-center opacity-80",
               "border-black/10 dark:border-white/10"
             )}>
-              <span className={cn("font-medium", data.textClass)}>Project</span>
+              <span className={cn("font-medium text-sm uppercase tracking-wider", data.textClass)}>
+                {data.role.toLowerCase().includes("intern") ? "Internship" : "Full-time"}
+              </span>
               <div className={cn(
-                "p-2 rounded-full transition-transform group-hover:scale-110",
-                "bg-black text-white dark:bg-white dark:text-black"
+                "flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold",
+                "bg-black/5 dark:bg-white/10",
+                data.textClass
               )}>
-                <ArrowUpRight size={20} />
+                <Briefcase size={14} />
+                <span>Verified</span>
               </div>
             </div>
           </div>
@@ -225,7 +236,7 @@ export default function ProfessionalExperience() {
           transition={{ duration: 0.6 }}
           className="text-neutral-900 dark:text-white text-4xl md:text-6xl font-bold tracking-tighter text-center"
         >
-          Work History
+          Professional Experience
         </motion.h2>
         <p className="text-neutral-500 mt-4">Scroll down to explore</p>
         <motion.div
