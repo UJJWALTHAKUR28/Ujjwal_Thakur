@@ -58,7 +58,11 @@ const experiences: Experience[] = [
       { name: "Framer Motion", icon: Layout },
     ],
     description: [
-      "Redesigned and developed the company's official website using Next.js and Tailwind CSS, incorporating advanced Framer Motion animations and micro-interactions to create a highly engaging, modern, and responsive user experience.",
+      "Spearheaded the complete redesign and architectural restructuring of the company’s web platform, utilizing Framer Motion to deliver a responsive, high-performance interface with seamless animations.",
+
+      "Engineered and maintained robust backend infrastructure, developing scalable RESTful APIs to ensure secure, efficient data flow between the server and client-side application.",
+
+      "Modernized the full-stack codebase by optimizing component structures and implementing UI/UX best practices, significantly elevating the overall user experience and system maintainability.",
     ],
   },
 
