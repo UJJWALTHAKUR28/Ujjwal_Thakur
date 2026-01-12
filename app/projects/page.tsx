@@ -2,11 +2,11 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  Github, 
-  Globe, 
-  Layers, 
-  Cpu, 
+import {
+  Github,
+  Globe,
+  Layers,
+  Cpu,
   ArrowUpRight,
   Code2 // Fallback icon
 } from "lucide-react";
@@ -21,7 +21,6 @@ function cn(...inputs: ClassValue[]) {
 }
 
 // --- Icon Mapping (Tech Name -> SimpleIcons Slug) ---
-// We use simpleicons.org CDN for lightweight, real brand logos
 const techSlugMap = {
   "Next.js": "nextdotjs",
   "Next.js 14": "nextdotjs",
@@ -105,7 +104,7 @@ const projects = [
       "Robust offline capabilities using IndexedDB local storage."
     ],
   },
-  
+
   {
     id: 5,
     title: "DeployIQ",
@@ -155,17 +154,17 @@ const projects = [
 
 const TechIcon = ({ name }: { name: string }) => {
   const slug = techSlugMap[name as keyof typeof techSlugMap];
-  
+
   // List of icons that are black/dark by default and need inversion in dark mode
   const invertInDarkMode = ["nextdotjs", "flask", "express", "socketdotio", "jsonwebtokens"];
-  
+
   return (
-    <div className="flex items-center gap-1.5 bg-neutral-100 dark:bg-neutral-800/50 px-3 py-1.5 rounded-md text-sm font-medium text-neutral-600 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700 hover:border-orange-500/50 transition-colors cursor-default select-none">
+    <div className="flex items-center gap-1.5 bg-neutral-100 dark:bg-neutral-800/50 px-3 py-1.5 rounded-md text-sm font-medium text-neutral-600 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700 hover:border-lime-500/50 transition-colors cursor-default select-none">
       {slug ? (
-        <img 
-          src={`https://cdn.simpleicons.org/${slug}`} 
+        <img
+          src={`https://cdn.simpleicons.org/${slug}`}
           alt={`${name} icon`}
-          width={14} 
+          width={14}
           height={14}
           className={cn(
             "w-3.5 h-3.5",
@@ -173,7 +172,7 @@ const TechIcon = ({ name }: { name: string }) => {
           )}
         />
       ) : (
-        <Code2 size={14} className="text-orange-600 dark:text-orange-500" />
+        <Code2 size={14} className="text-lime-600 dark:text-lime-500" />
       )}
       <span>{name}</span>
     </div>
@@ -189,7 +188,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.7, delay: index * 0.1, ease: "easeOut" }}
-      className="group relative flex flex-col w-full max-w-4xl mx-auto bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl dark:hover:shadow-orange-900/10 transition-all duration-500 mb-16"
+      className="group relative flex flex-col w-full max-w-4xl mx-auto bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl dark:hover:shadow-lime-900/10 transition-all duration-500 mb-16"
     >
       {/* 1. Image Covering Top */}
       <div className="relative h-64 md:h-96 w-full overflow-hidden border-b border-neutral-200 dark:border-neutral-800">
@@ -204,13 +203,13 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
       {/* Content Container */}
       <div className="flex flex-col flex-grow p-6 md:p-10">
-        
+
         {/* 2. Project Name & Links */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-          <h3 className="text-3xl md:text-4xl font-black text-neutral-900 dark:text-white tracking-tight group-hover:text-orange-600 transition-colors">
+          <h3 className="text-3xl md:text-4xl font-black text-neutral-900 dark:text-white tracking-tight group-hover:text-lime-600 transition-colors">
             {project.title}
           </h3>
-          
+
           <div className="flex items-center gap-4">
             <a
               href={project.githubLink}
@@ -226,7 +225,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-orange-600 hover:bg-orange-700 text-white transition-all font-medium text-sm shadow-lg shadow-orange-600/20"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-lime-600 hover:bg-lime-700 text-black transition-all font-bold text-sm shadow-lg shadow-lime-600/20"
               >
                 <Globe size={18} />
                 <span>Live Demo</span>
@@ -238,7 +237,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
         {/* 3. Tech Stack Section */}
         <div className="mb-8 space-y-3">
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-orange-600 dark:text-orange-500">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-lime-600 dark:text-lime-400">
             <Layers size={14} />
             <span>Technology Stack</span>
           </div>
@@ -251,14 +250,14 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
         {/* 4. Description */}
         <div className="flex-grow mb-8">
-           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-400 dark:text-neutral-500 mb-3">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-400 dark:text-neutral-500 mb-3">
             <Cpu size={14} />
             <span>Key Features</span>
           </div>
           <ul className="grid grid-cols-1 md:grid-cols-1 gap-3">
             {project.description.map((point, i) => (
               <li key={i} className="flex items-start gap-3 text-neutral-600 dark:text-neutral-400 text-base md:text-lg leading-relaxed">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-orange-600 flex-shrink-0" />
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-lime-600 flex-shrink-0" />
                 {point}
               </li>
             ))}
@@ -267,25 +266,25 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
         {/* 5. Separator & Status */}
         <div className="mt-auto pt-6 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
-            <span className="text-xs font-bold tracking-widest text-neutral-400 dark:text-neutral-600 uppercase">Current Status</span>
-            <div className={cn(
-                "flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-bold border tracking-wide uppercase",
-                isOperational 
-                    ? "bg-green-500/10 text-green-700 border-green-500/20 dark:text-green-400 dark:border-green-500/20" 
-                    : "bg-yellow-500/10 text-yellow-700 border-yellow-500/20 dark:text-yellow-400 dark:border-yellow-500/20"
-            )}>
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className={cn(
-                    "animate-ping absolute inline-flex h-full w-full rounded-full opacity-75",
-                     isOperational ? "bg-green-500" : "bg-yellow-500"
-                  )}></span>
-                  <span className={cn(
-                    "relative inline-flex rounded-full h-2.5 w-2.5",
-                     isOperational ? "bg-green-500" : "bg-yellow-500"
-                  )}></span>
-                </span>
-                {isOperational ? "Operational" : "In Development"}
-            </div>
+          <span className="text-xs font-bold tracking-widest text-neutral-400 dark:text-neutral-600 uppercase">Current Status</span>
+          <div className={cn(
+            "flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-bold border tracking-wide uppercase",
+            isOperational
+              ? "bg-green-500/10 text-green-700 border-green-500/20 dark:text-green-400 dark:border-green-500/20"
+              : "bg-yellow-500/10 text-yellow-700 border-yellow-500/20 dark:text-yellow-400 dark:border-yellow-500/20"
+          )}>
+            <span className="relative flex h-2.5 w-2.5">
+              <span className={cn(
+                "animate-ping absolute inline-flex h-full w-full rounded-full opacity-75",
+                isOperational ? "bg-green-500" : "bg-yellow-500"
+              )}></span>
+              <span className={cn(
+                "relative inline-flex rounded-full h-2.5 w-2.5",
+                isOperational ? "bg-green-500" : "bg-yellow-500"
+              )}></span>
+            </span>
+            {isOperational ? "Operational" : "In Development"}
+          </div>
         </div>
       </div>
     </motion.div>
@@ -296,18 +295,18 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
 export default function ShowcasePage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-neutral-900 dark:text-white relative overflow-x-hidden selection:bg-orange-600 selection:text-white">
-      
+    <div className="min-h-screen bg-white dark:bg-black text-neutral-900 dark:text-white relative overflow-x-hidden selection:bg-lime-500 selection:text-black">
+
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-60 dark:opacity-0 transition-opacity duration-300"
-           style={{
-             backgroundImage: `linear-gradient(to right, #f0f0f0 1px, transparent 1px), linear-gradient(to bottom, #f0f0f0 1px, transparent 1px)`,
-             backgroundSize: '50px 50px'
-           }}
+        style={{
+          backgroundImage: `linear-gradient(to right, #f0f0f0 1px, transparent 1px), linear-gradient(to bottom, #f0f0f0 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }}
       ></div>
 
       <main className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-32">
-        
+
         {/* CENTERED Header Section */}
         <section className="mb-32 flex flex-col items-center text-center">
           <motion.div
@@ -318,8 +317,8 @@ export default function ShowcasePage() {
             <h1 className="text-6xl md:text-9xl font-black tracking-tighter mb-4 text-neutral-900 dark:text-white">
               SHOWCASE
             </h1>
-            {/* Centered orange bar */}
-            <div className="h-3 w-40 bg-orange-600 mb-8 mx-auto"></div>
+            {/* Centered Green bar */}
+            <div className="h-3 w-40 bg-lime-500 mb-8 mx-auto shadow-[0_0_20px_rgba(132,204,22,0.6)]"></div>
           </motion.div>
 
           <motion.div
@@ -330,7 +329,7 @@ export default function ShowcasePage() {
           >
             <h2 className="text-3xl font-bold mb-4 tracking-tight">All Projects</h2>
             <p className="text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              A curated collection of my work, side projects, and experiments. 
+              A curated collection of my work, side projects, and experiments.
               From complex full-stack applications to small, efficient utilities.
             </p>
           </motion.div>
@@ -352,8 +351,8 @@ export default function ShowcasePage() {
         </p>
       </footer>
 
-      <CTASection/>
-      <ContactSection/>
+      <CTASection />
+      <ContactSection />
     </div>
   );
 }

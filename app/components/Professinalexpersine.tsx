@@ -109,7 +109,7 @@ const CurtainSection = ({
   index: number;
 }) => {
   return (
-    <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden transition-colors duration-700">
+    <div className="sticky top-0 min-h-screen w-full flex flex-col justify-center overflow-hidden transition-colors duration-700">
 
       {/* Dynamic Background Gradient */}
       <div className={cn("absolute inset-0 z-0 transition-colors duration-700", data.backgroundClass)} />
@@ -133,11 +133,11 @@ const CurtainSection = ({
             <span>0{experiences.length - index}</span>
             <span className={cn("w-12 h-[1px]", data.textClass === "text-white" ? "bg-white/50" : "bg-black/20")}></span>
             <span className="flex items-center gap-2"><Calendar size={14} /> {data.date}</span>
-             <div className={cn("flex items-center gap-2 text-sm font-mono opacity-50", data.textClass)}>
-            <MapPin size={16} /> {data.location}
+            <div className={cn("flex items-center gap-2 text-sm font-mono opacity-50", data.textClass)}>
+              <MapPin size={16} /> {data.location}
+            </div>
           </div>
-          </div>
-         
+
           {/* Big Title */}
           <h2 className={cn("text-5xl md:text-7xl font-black leading-tight tracking-tight transition-colors duration-300", data.textClass)}>
             {data.role}
@@ -161,7 +161,7 @@ const CurtainSection = ({
             ))}
           </div>
 
-         
+
         </motion.div>
 
         {/* Right Side: Visuals / Tech Stack */}

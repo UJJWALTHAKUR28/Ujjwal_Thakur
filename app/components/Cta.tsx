@@ -23,7 +23,7 @@ export default function CTASection() {
       bg-[#f5f5f4] dark:bg-black" // Stone-100 for Light, Pure Black for Dark
     >
       <div className="container mx-auto px-4 text-center z-10">
-        
+
         {/* --- Text Reveal Animation --- */}
         <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-12 max-w-4xl mx-auto leading-tight text-stone-900 dark:text-stone-100">
           <span className="sr-only">{text}</span>
@@ -39,12 +39,12 @@ export default function CTASection() {
                   className="inline-block"
                   variants={{
                     hidden: { y: "100%" },
-                    visible: { 
-                      y: 0, 
-                      transition: { 
+                    visible: {
+                      y: 0,
+                      transition: {
                         ease: [0.33, 1, 0.68, 1],
-                        duration: 0.6 
-                      } 
+                        duration: 0.6
+                      }
                     },
                   }}
                 >
@@ -66,8 +66,12 @@ export default function CTASection() {
               "relative inline-flex items-center justify-center",
               "rounded-full px-10 py-4 md:px-12 md:py-5", // Large padding for "smashed" look
               "font-bold text-xl md:text-2xl tracking-wide", // Bold and larger text
-              "bg-orange-700 text-white", // Deep Burnt Orange background, White text
-              "dark:bg-orange-600", // Slightly brighter orange for dark mode contrast
+              // Light Mode: Vibrant Emerald Green
+              "bg-emerald-600 text-white",
+              // Dark Mode: Bright Lime Green with Black text (Omnitrix style)
+              "dark:bg-lime-500 dark:text-black",
+              // Glow Effect for Dark Mode
+              "dark:shadow-[0_0_30px_rgba(132,204,22,0.5)]",
               "cursor-default select-none shadow-xl" // Static behavior (no pointer)
             )}
           >
@@ -76,8 +80,8 @@ export default function CTASection() {
         </motion.div>
       </div>
 
-      {/* Optional: Subtle Background Texture */}
-      <div className="absolute inset-0 pointer-events-none opacity-5 dark:opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-stone-400 to-transparent dark:from-stone-700"></div>
+      {/* Optional: Subtle Background Texture (Green Tint) */}
+      <div className="absolute inset-0 pointer-events-none opacity-5 dark:opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-500 to-transparent dark:from-lime-500"></div>
     </section>
   );
 }
