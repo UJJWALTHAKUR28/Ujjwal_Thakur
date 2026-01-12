@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from './components/Navbar'
 import LandingPage from './components/LandingPage'
 import QuoteMaskSection from './components/QuoteMasksection'
 
@@ -14,7 +13,6 @@ import CTASection from './components/Cta'
 const App = () => {
   return (
     <div>
-      <Navbar />
       <LandingPage />
       <QuoteMaskSection />
       <AboutSection/>
