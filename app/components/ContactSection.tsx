@@ -18,7 +18,7 @@ const ContactSection = () => {
     },
     {
       name: "Mail",
-      url: "ujjwalthakur.008reena@gmail.com",
+      url: "mailto:ujjwalthakur.008reena@gmail.com",
       icon: <FaEnvelope className="w-6 h-6" />,
     },
   ];
