@@ -81,7 +81,7 @@ const projects = [
     title: "Cognivoice",
     image: "/cognivoicde.jpeg",
     githubLink: "https://github.com/UJJWALTHAKUR28/COGNIVOICE",
-    liveLink: null,
+    liveLink: "https://cognivoice.vercel.app,
     status: "operational",
     techStack: ["Next.js", "Python", "FastAPI", "PyTorch", "WebRTC", "MongoDB"],
     description: [
